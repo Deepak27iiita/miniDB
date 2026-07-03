@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MiniDB &mdash; console</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="frame">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">&gt;_</span>
+        <span class="brand-name">MiniDB</span>
+        <span class="brand-sub">B+Tree &middot; WAL &middot; ACID-ish txns</span>
+      </div>
+      <div class="status" id="status">
+        <span class="dot" id="statusDot"></span>
+        <span id="statusText">connecting&hellip;</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-head">
+          <span>collections</span>
+          <button id="newCollBtn" class="icon-btn" title="Create / switch collection">+</button>
+        </div>
+        <ul id="collectionList" class="coll-list"></ul>
+
+        <div class="sidebar-head" style="margin-top:20px;">indexes</div>
+        <ul id="indexList" class="coll-list muted-list"></ul>
+        <div class="index-add">
+          <input id="indexField" type="text" placeholder="field name" />
+          <button id="addIndexBtn">index</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="panel query-panel">
+          <div class="panel-head">
+            <span class="panel-title">query</span>
+            <span class="panel-hint">Mongo-style filter JSON &mdash; e.g. {"age":{"$gt":18}}</span>
+          </div>
+          <textarea id="filterInput" class="code-input" rows="3">{}</textarea>
+          <div class="btn-row">
+            <button id="findBtn" class="primary">run find()</button>
+            <button id="countBtn">count</button>
+            <span class="result-meta" id="resultMeta"></span>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <span class="panel-title">documents</span>
+          </div>
+          <div id="docTableWrap" class="table-wrap">
+            <table id="docTable">
+              <thead><tr id="docTableHead"></tr></thead>
+              <tbody id="docTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <span class="panel-title">insert document</span>
+          </div>
+          <textarea id="insertInput" class="code-input" rows="4">{"name": "example", "value": 1}</textarea>
+          <div class="btn-row">
+            <button id="insertBtn" class="primary">insertOne()</button>
+            <span class="result-meta" id="insertMeta"></span>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="footer">engine: heap file + on-disk B+Tree primary index + secondary indexes + write-ahead log</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

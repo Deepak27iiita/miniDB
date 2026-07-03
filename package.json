@@ -1,0 +1,15 @@
+{
+  "name": "minidb",
+  "version": "1.0.0",
+  "description": "A MongoDB-inspired document database built from scratch: on-disk B+Tree indexes, write-ahead log, transactions, a Mongo-like query language, REST API, CLI shell, and a web dashboard.",
+  "main": "src/api/server.js",
+  "scripts": {
+    "start": "node src/api/server.js data",
+    "shell": "node src/cli/shell.js data",
+    "test": "node tests/test.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "license": "MIT"
+}
