@@ -9,7 +9,6 @@
 </div>
 
 ---
-
 **MiniDB** is a fully functional document database built from scratch in Node.js. It acts as a small-scale MongoDB, utilizing entirely custom-built internal engines rather than wrapping around existing solutions like SQLite or LevelDB. The B+Tree index, page manager, write-ahead log (WAL), and transaction layer are all hand-written from the ground up.
 
 ---
