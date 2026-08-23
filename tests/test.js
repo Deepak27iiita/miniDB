@@ -5,7 +5,7 @@ const { execSync } = require('child_process');
 const { Database } = require('../src/engine/Database');
 const { BTree } = require('../src/storage/BTree');
 
-const TMP = path.join(__dirname, '..', '.test-data');
+const TMP  = path.join(__dirname, '..', '.test-data');
 if (fs.existsSync(TMP)) fs.rmSync(TMP, { recursive: true, force: true });
 
 let passed = 0;
