@@ -27,7 +27,7 @@
 ---
 
 ## ✨ Key Features
-- 🌲 **On-disk B+Tree Index** — Real page-based storage, node splitting, and ordered range scans.
+- 🌲 ** On-disk B+Tree Index** — Real page-based storage, node splitting, and ordered range scans.
 - 📜 **Write-Ahead Log (WAL)** — Mutations are fsync'd to a log *before* being applied, ensuring safe crash recovery.
 - 🔒 **Transactions** — Full `BEGIN` / `COMMIT` / `ROLLBACK` functionality with read-your-own-writes isolation and crash atomicity.
 - 🔍 **Rich Query Engine** — Supports MongoDB-style filters (`$gt`, `$in`, `$and`, `$regex`, etc.), sorting, projections, and automatic secondary index utilization.
