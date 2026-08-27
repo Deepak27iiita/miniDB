@@ -17,7 +17,7 @@ console.log('  show collections');
 console.log('  help');
 console.log('  exit\n');
 
-//   Proxy that lazily creates a collection accessor: db.<name>.<method>(...)
+//  Proxy that lazily creates a collection accessor: db.<name>.<method>(...)
 const dbProxy = new Proxy(
   {},
   {
